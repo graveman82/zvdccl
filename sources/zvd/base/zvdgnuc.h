@@ -36,10 +36,30 @@ Modification authors:
 #ifndef ZVD_GNUC_H
 #define ZVD_GNUC_H
 
-// validation
+// correct header validation
 #if !defined(ZVD_GNUC)
 #   error "zvd: this file must be included by zvdcompiler.h"
-#endif // validation
+#endif // correct header validation
 
+
+#define ZVD_GCC_VER_PACKED_TO_INT(major,minor,patch) \
+(major * 10000 + minor * 100 + patch)
+
+#define ZVD_GCC_CUR_VER_PACKED_TO_INT \
+ZVD_GCC_VER_PACKED_TO_INT(__GNUC__,__GNUC_MINOR__,__GNUC_PATCHLEVEL__)
+
+#define ZVD_GCC_VER_LESS(major,minor,patch) \
+(ZVD_GCC_CUR_VER_PACKED_TO_INT < ZVD_GCC_VER_PACKED_TO_INT(major,minor,patch))
+/**  GCC version helper
+
+Usage
+    @code
+// Test for GCC >= 8.2.1
+//#if ZVD_GCC_VER_LESS(8,2,1)
+//#error too old version of gcc
+//#endif
+    @endcode
+
+*/
 
 #endif // ZVD_GNUC_H
