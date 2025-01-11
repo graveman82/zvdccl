@@ -2,7 +2,7 @@
 ******************************************************************************
 Permanent info
 --------------
-File:               zvdheaderblank.h
+File:               base/zvdcompiler.h
 Original author:    Marat Sungatullin
 Purpose:
     compiler detection macros
@@ -35,5 +35,22 @@ Modification authors:
 
 #ifndef ZVD_COMPILER_H
 #define ZVD_COMPILER_H
+
+// first compiler detection block
+#if defined(__GNUC__)
+/// If defined zvd library or larger work are compiled by GNU C compiler
+#   define ZVD_GNUC __GNUC__
+
+#else
+#   error "zvd: unsupported compiler"
+
+#endif // compiler detection
+
+
+// GNU C compiler related header for further detections
+#if defined(ZVD_GNUC)
+#   include "base/zvdgnuc.h"
+
+#endif
 
 #endif // ZVD_COMPILER_H

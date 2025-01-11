@@ -2,10 +2,11 @@
 ******************************************************************************
 Permanent info
 --------------
-File:               zvddefaultconfig.h
+File:               base/zvdgnuc.h
 Original author:    Marat Sungatullin
 Purpose:
-    config building of zvd
+    GNU C compiler detection macros
+
 Created:            jan 11, 2012
 License:
 
@@ -32,13 +33,13 @@ Modification authors:
 ******************************************************************************
 */
 
-#ifndef ZVD_CONFIG_H
-#define ZVD_CONFIG_H
+#ifndef ZVD_GNUC_H
+#define ZVD_GNUC_H
 
-#ifdef ZVD_USE_CUSTOM_CONFIG
-#include "zvdcustomconfig.h"
-#else
-#include "zvddefaultconfig.h"
-#endif // zvd config selection
+// validation
+#if !defined(ZVD_GNUC)
+#   error "zvd: this file must be included by zvdcompiler.h"
+#endif // validation
 
-#endif // ZVD_CONFIG_H
+
+#endif // ZVD_GNUC_H

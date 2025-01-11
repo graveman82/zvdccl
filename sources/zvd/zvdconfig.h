@@ -2,7 +2,7 @@
 ******************************************************************************
 Permanent info
 --------------
-File:               zvdheaderblank.h
+File:               zvdconfig.h
 Original author:    Marat Sungatullin
 Purpose:
     config building of zvd (default)
