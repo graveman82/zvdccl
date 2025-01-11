@@ -5,7 +5,7 @@ Permanent info
 File:               zvdconfig.h
 Original author:    Marat Sungatullin
 Purpose:
-    config building of zvd (default)
+    config building of zvd
 Created:            jan 11, 2012
 License:
 
@@ -32,9 +32,13 @@ Modification authors:
 ******************************************************************************
 */
 
-#ifndef ZVD_DEFAULT_CONFIG_H
-#define ZVD_DEFAULT_CONFIG_H
+#ifndef ZVD_CONFIG_H
+#define ZVD_CONFIG_H
 
+#ifdef ZVD_USE_CUSTOM_CONFIG
+#include "zvdcustomconfig.h"
+#else
+#include "zvddefaultconfig.h"
+#endif // zvd config selection
 
-
-#endif // ZVD_DEFAULT_CONFIG_H
+#endif // ZVD_CONFIG_H
