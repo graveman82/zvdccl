@@ -1,14 +1,16 @@
 Type Naming
 -----------
 
-"Zvd" prefix
-Subsystem or module string tag
-Name Of the type
+The type name starts with an uppercase letter and the words are separated using Camel Casing. That is, each new word in class name starts with an uppercase letter. 
+For global namespace the "Zvd" prefix is used. This is the common way to name zvd types.
+
+To distinguish between types of same name but in different subsystems (modules) that subsytem short name is used right after the "Zvd" prefix before the base name of type.
 
 For example:
+
 ZvdMathCircle - math description of a circle
 ZvdWorldCircle - circle as object in world
-ZvdGfx3DCircle - circle render data
+ZvdGfxCircle3DF64 - circle render data with double to store coords
 
 Subsystems and modules
 -----------------------
