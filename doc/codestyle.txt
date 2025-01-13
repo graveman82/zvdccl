@@ -44,3 +44,9 @@ The names of the global functions all start with a "Zvd_" prefix.
 
 For example, 
 void* Zvd_AllocMem();
+
+----------------------
+Third-party extensions
+----------------------
+
+Some third-party libraries use the ZvdnnClassName naming convention, which means that the class belongs to a library extending zvd. The nn from the prefix tells you which library the class belongs to. For example, ... .
