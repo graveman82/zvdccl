@@ -1,0 +1,20 @@
+Type Naming
+-----------
+
+"Zvd" prefix
+Subsystem or module string tag
+Name Of the type
+
+For example:
+ZvdMathCircle - math description of a circle
+ZvdWorldCircle - circle as object in world
+ZvdGfx3DCircle - circle render data
+
+Subsystems and modules
+-----------------------
+
+base -- base definitions and utils
+math -- math library
+world -- world system
+gfx3d -- 3d graphics
+gui -- user interface
