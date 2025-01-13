@@ -36,6 +36,50 @@ Modification authors:
 #ifndef ZVD_COMPILER_H
 #define ZVD_COMPILER_H
 
+
+// cpp standard
+#if defined( __cplusplus) && !defined(ZVD_CPP)
+#   define ZVD_CPP __cplusplus
+
+#   if ZVD_CPP == 202302L
+#       define ZVD_CPP2023 202302L
+#       define ZVD_CPP2020 0
+#       define ZVD_CPP2017 0
+#       define ZVD_CPP2014 0
+#       define ZVD_CPP2011 0
+#       define ZVD_CPP1998 0
+
+#   elif ZVD_CPP == 202002L
+#       define ZVD_CPP2020 202002L
+#       define ZVD_CPP2017 0
+#       define ZVD_CPP2014 0
+#       define ZVD_CPP2011 0
+#       define ZVD_CPP1998 0
+
+#   elif ZVD_CPP == 201703L
+#       define ZVD_CPP2017 201703L
+#       define ZVD_CPP2014 0
+#       define ZVD_CPP2011 0
+#       define ZVD_CPP1998 0
+
+#   elif ZVD_CPP == 201402L
+#       define ZVD_CPP2014 201402L
+#       define ZVD_CPP2011 0
+#       define ZVD_CPP1998 0
+
+#   elif ZVD_CPP == 201103L
+#       define ZVD_CPP2011 201103L
+#       define ZVD_CPP1998 0
+
+#   elif ZVD_CPP == 199711L
+#       define ZVD_CPP1998 199711L
+
+
+#   endif // all supported standards of cpp
+
+#endif // cpp standard
+
+
 // first compiler detection block
 #if defined(__GNUC__)
 /// If defined zvd library or larger work are compiled by GNU C compiler
@@ -45,6 +89,7 @@ Modification authors:
 #   error "zvd: unsupported compiler"
 
 #endif // compiler detection
+
 
 
 // GNU C compiler related header for further detections
